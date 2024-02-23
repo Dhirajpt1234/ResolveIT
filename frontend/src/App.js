@@ -1,11 +1,19 @@
 import "./App.css";
-import ComplaintGeneration from "./pages/ComplaintGeneration";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Home2 from "./pages/Home2";
 
 function App() {
   return (
-    <div className="App">
-      <h1 class="text-3xl font-bold underline">Hello world!</h1>
-    </div>
+    <BrowserRouter>
+
+      <Routes>
+        <Route path="/" element={ <Home/>} />
+        <Route path="/home2" element={ <Home2/>} />
+
+      </Routes>
+    
+    </BrowserRouter>
   );
 }
 
