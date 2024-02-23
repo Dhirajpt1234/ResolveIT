@@ -2,22 +2,16 @@ import React, { useState } from "react";
 import "../welcome/welcome.css";
 
 function WelcomePage() {
-  const [role, setRole] = useState("");
-
-  const handleRoleChange = (e) => {
-    setRole(e.target.value);
-  };
-
-  const handleSubmit = (e) => {
+  const [fullname,setFullname] = useState();
+  const [email,setEmail] = useState();
+  const [pass,setPass] = useState();
+  const [state,setState] = useState();
+  const [dist,setDist] = useState();
+  const handleSubmit = (e) =>
+  {
     e.preventDefault();
-
-    const userID = document.getElementById("userid").value;
-    const fullName = document.getElementById("fullName").value;
-    const address = document.getElementById("address").value;
-    const password = document.getElementById("password").value;
-    const confirmPassword = document.getElementById("confirmpassword").value;
-
-    console.log("Form submitted successfully!");
+    const data = {name:fullname,email:email,pass:pass,state:state,dist:dist}
+    console.log(data);
   };
 
   return (
@@ -30,21 +24,9 @@ function WelcomePage() {
           />
         </div>
 
-        <div className='welcomeform'>
+        <form className='welcomeform' onSubmit={(e)=>{handleSubmit(e)}}>
           <div className='bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4'>
-            <div className='mb-6'>
-              <h4>Register Yourself !!! </h4>
-              <label
-                className='block text-gray-700 text-sm font-bold mb-2'
-                htmlFor='userID'></label>
-              <input
-                className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
-                id='userid'
-                type='number'
-                placeholder='Enter your User ID'
-              />
-            </div>
-
+            <h4>Register Yourself !!! </h4>
             <div className='mb-4'>
               <label
                 className='block text-gray-700 text-sm font-bold mb-2'
@@ -54,34 +36,24 @@ function WelcomePage() {
                 id='fullName'
                 type='text'
                 placeholder='Enter your full name'
+                value={fullname}
+                onChange={(e)=>{setFullname(e.target.value)}}
               />
             </div>
 
             <div className='mb-4'>
               <label
                 className='block text-gray-700 text-sm font-bold mb-2'
-                htmlFor='fullName'></label>
+                htmlFor='email'></label>
               <input
                 className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
-                id='address'
+                id='email'
                 type='text'
-                placeholder='Enter your Address'
-              />
-            </div>
+                placeholder='Enter your email'
+                value={email}
+                onChange={(e)=>{setEmail(e.target.value)}}
 
-            <div className='mb-4'>
-              <label
-                className='block text-gray-700 text-sm font-bold mb-2'
-                htmlFor='role'></label>
-              <select
-                className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
-                id='role'
-                value={role}
-                onChange={handleRoleChange}>
-                <option value='Select Role'>Select Role</option>
-                <option value='citizen'>Citizen</option>
-                <option value='admin'>Admin</option>
-              </select>
+              />
             </div>
 
             <div className='mb-4'>
@@ -93,28 +65,47 @@ function WelcomePage() {
                 id='password'
                 type='password'
                 placeholder='Enter your password'
+                value={pass}
+                onChange={(e)=>{setPass(e.target.value)}}
+
+              />
+            </div>
+            <div className='mb-4'>
+              <label
+                className='block text-gray-700 text-sm font-bold mb-2'
+                htmlFor='state'></label>
+              <input
+                className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
+                id='state'
+                type='state'
+                placeholder='Enter your password'
+                value={state}
+                onChange={(e)=>{setState(e.target.value)}}
+
               />
             </div>
 
             <div className='mb-4'>
               <label
                 className='block text-gray-700 text-sm font-bold mb-2'
-                htmlFor='confirmpassword'></label>
+                htmlFor='dist'></label>
               <input
                 className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
-                id='confirmpassword'
-                type='password'
-                placeholder='Confirm Password'
+                id='dist'
+                type='dist'
+                placeholder='enter state'
+                onChange={(e)=>{setDist(e.target.value)}}
+                value={dist}
               />
             </div>
 
-            <button
+            <input
               type='submit'
               className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline' >
-              Register
-            </button>
+
+            </input>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   );
