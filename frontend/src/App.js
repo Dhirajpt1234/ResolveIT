@@ -1,11 +1,10 @@
 import "./App.css";
+import ComplaintGeneration from "./pages/ComplaintGeneration";
 
 function App() {
   return (
     <div className="App">
-      <div>
-        <p class="text-5xl font-bold underline">Hello world!</p>
-      </div>
+      <h1 class="text-3xl font-bold underline">Hello world!</h1>
     </div>
   );
 }
