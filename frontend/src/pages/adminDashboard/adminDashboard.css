@@ -1,0 +1,19 @@
+.project-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100vw;
+    /* border: red solid 2px; */
+    box-sizing: border-box;
+
+}
+
+.complaint-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100vw;
+    /* border: red solid 2px; */
+    box-sizing: border-box;
+
+}

@@ -1,0 +1,70 @@
+.card {
+    margin: 10px;
+    border: black solid 2px;
+    width: 300px;
+    height: 320px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgb(78, 61, 61);
+}
+
+.card:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.headingCard {
+    padding: 10px;
+    /* border: blue solid 2px; */
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.projectWrapper {
+    padding: 10px;
+}
+
+.locWrapper {
+    display: flex;
+    margin: 0 10px 10px 10px;
+    align-items: center;
+}
+
+.locImage {
+    height: 30px;
+    width: 30px;
+    display: block;
+}
+
+.location {
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+.desc {
+    color: rgb(87, 83, 83);
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+.buttons>button {
+    margin: 10px;
+
+}
+
+.edit {
+    background-color: azure;
+    border: black solid 1px;
+    border-radius: 10px;
+    width: 60px;
+
+}
+
+.cancel {
+    background-color: azure;
+    border: black solid 1px;
+    border-radius: 10px;
+    width: 60px;
+}
