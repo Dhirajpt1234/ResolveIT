@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ComplaintGeneration from "./pages/complaintGeneration/ComplaintGeneration";
 import ComplaintForm from "./components/complaintForm";
 import Navbar from "./components/navbar";
+import ProjectGenerationPage from "./pages/projectGeneration/projectGenerationPage";
 
 function App() {
   return (
@@ -13,7 +14,8 @@ function App() {
     // </BrowserRouter>
 
     <div>
-      <ComplaintGeneration />
+      <ProjectGenerationPage />
+      {/* <ComplaintGeneration /> */}
       {/* <Navbar /> */}
     </div>
   );
