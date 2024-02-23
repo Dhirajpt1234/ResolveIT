@@ -4,19 +4,12 @@ import ComplaintGeneration from "./pages/complaintGeneration/ComplaintGeneration
 import ComplaintForm from "./components/complaintForm";
 import Navbar from "./components/navbar";
 import ProjectGenerationPage from "./pages/projectGeneration/projectGenerationPage";
+import AdminDashboard from "./pages/adminDashboard/adminDashboard";
 
 function App() {
   return (
-    // <BrowserRouter>
-    //   <Routes>
-    //     <Route path="/complaintgeneration" element={<ComplaintGeneration />} />
-    //   </Routes>
-    // </BrowserRouter>
-
-    <div>
-      <ProjectGenerationPage />
-      {/* <ComplaintGeneration /> */}
-      {/* <Navbar /> */}
+    <div className="container m-auto">
+      <AdminDashboard />
     </div>
   );
 }
