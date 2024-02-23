@@ -3,10 +3,10 @@ const { Schema } = mongoose;
 
 const projectSchema = new Schema(
 {
-  title: { type: String, required: true},
-  desc: { type: String, required: true, unique: true},
-  state: {type: String, required: true},
-  district: {type: String, required: true},
+  title: { type: String,},
+  desc: { type: String},
+  state: {type: String},
+  district: {type: String},
   status:{ type:String, default:"Pending"},
   images : {type:[String]},
   pdfs:{type:[String]}

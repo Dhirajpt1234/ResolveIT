@@ -4,17 +4,19 @@ const express = require('express');
 const cookieParser = require('cookie-parser');
 
 const path = require('path');
-const authRouter = require('./Routes/Auth');
-const projectRouter = require('./Routes/Project');
+const authRouter = require('./routes/Auth');
+const projectRouter = require('./routes/Project');
+const complaintRouter = require('./routes/Complaint');
+
 const passport = require('passport');
 const session = require('express-session');
 
 const jwt = require('jsonwebtoken');
 const JwtStrategy = require('passport-jwt').Strategy;
 const LocalStrategy = require('passport-local').Strategy;
-const {uploadImg} = require('./Controller/uploadImg');
-const {uploadPdf} = require('./Controller/uploadPdf');
-const {User} = require('./Model/User')
+const {uploadImg} = require('./controller/uploadImg');
+const {uploadPdf} = require('./controller/uploadPdf');
+const {User} = require('./model/User')
 
 const server = express();
 
@@ -36,6 +38,7 @@ server.post('/uploadPdf',uploadPdf.array('pdfs'),(req,res,)=>{res.send("File Upl
 server.use(express.json());
 server.use('/auth',authRouter.router);
 server.use('/project',projectRouter.router);
+server.use('/complaint',complaintRouter.router);
 
 server.use(express.static('public'));
 server.use(express.static('Images'));

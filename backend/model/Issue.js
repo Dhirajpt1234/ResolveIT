@@ -3,11 +3,11 @@ const { Schema } = mongoose;
 
 const issueSchema = new Schema(
 {
-  pro_id : {type : Schema.Types.ObjectId, ref: 'Project', required:true },
-  title: { type: String, required: true},
-  desc: { type: String, required: true, unique: true},
-  state: {type: String, required: true},
-  district: {type: String, required: true},
+  userid : {type : Schema.Types.ObjectId, ref: 'User'},
+  title: { type: String, },
+  desc: { type: String},
+  state: {type: String},
+  district: {type: String},
   status:{ type:String, default:"Pending"},
   images : {type:[String]}
 },{timestamps: true});

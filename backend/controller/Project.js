@@ -1,9 +1,8 @@
-const { Project } = require('../Model/Project');
+const { Project } = require('../model/Project');
 
 exports.createProject = async (req, res) =>
 {
   const project = new Project(req.body);
-
   try
   {
     const doc = await project.save();
@@ -15,7 +14,6 @@ exports.createProject = async (req, res) =>
 
 exports.fetchAllProject= async (req, res) =>
 {
-
   let condition = {};
   let query = Project.find(condition);
   let totalProjectQuery = Project.find(condition);
@@ -28,7 +26,6 @@ exports.fetchAllProject= async (req, res) =>
     query = query.find({ dist: req.query.dist });
     totalProjectQuery = totalProjectQuery.find({ dist: req.query.dist });
   }
-
   const totalDocs = await totalProjectQuery.count().exec();
   if (req.query.page && req.query.limit)
   {
