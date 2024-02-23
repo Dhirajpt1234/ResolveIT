@@ -1,0 +1,30 @@
+
+
+.welcomeheading{
+    /* background-color: aqua; */
+    display: flex;
+    padding: 5rem;
+
+    h1{
+        text-align: center;
+        font-size: x-large;
+    }
+}
+
+.wlcomeimg{
+    flex: 50%;
+    width: 40rem;
+    height: 40rem;
+}
+
+.welcomeform{
+    flex: 50%;
+    h4{
+        text-align: center;
+    }
+}
+
+button{
+    width:32rem;
+    align-items: center;
+}
