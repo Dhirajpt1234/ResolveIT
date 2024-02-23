@@ -1,19 +1,21 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import Home2 from "./pages/Home2";
+import ComplaintGeneration from "./pages/complaintGeneration/ComplaintGeneration";
+import ComplaintForm from "./components/complaintForm";
+import Navbar from "./components/navbar";
 
 function App() {
   return (
-    <BrowserRouter>
+    // <BrowserRouter>
+    //   <Routes>
+    //     <Route path="/complaintgeneration" element={<ComplaintGeneration />} />
+    //   </Routes>
+    // </BrowserRouter>
 
-      <Routes>
-        <Route path="/" element={ <Home/>} />
-        <Route path="/home2" element={ <Home2/>} />
-
-      </Routes>
-    
-    </BrowserRouter>
+    <div>
+      <ComplaintGeneration />
+      {/* <Navbar /> */}
+    </div>
   );
 }
 
