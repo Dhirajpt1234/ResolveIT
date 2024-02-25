@@ -2,6 +2,7 @@ require('dotenv').config();
 const mongoose = require('mongoose');
 const express = require('express');
 const cookieParser = require('cookie-parser');
+const cors = require('cors');
 
 const path = require('path');
 const authRouter = require('./routes/Auth');
@@ -31,6 +32,8 @@ server.use(
 );
 
 server.use(passport.authenticate('session'));
+server.use(cors());
+
 
 
 server.post('/uploadImg',uploadImg.array('photos'),(req,res,)=>{res.send("File Uploaded")});

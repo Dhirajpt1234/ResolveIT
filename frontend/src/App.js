@@ -1,16 +1,38 @@
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import ComplaintGeneration from "./pages/complaintGeneration/ComplaintGeneration";
-import ComplaintForm from "./components/complaintForm";
-import Navbar from "./components/navbar";
-import ProjectGenerationPage from "./pages/projectGeneration/projectGenerationPage";
-import AdminDashboard from "./pages/adminDashboard/adminDashboard";
+
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import WelcomePage from "./pages/WelcomePage";
+import AboutUsPage from "./pages/AboutPage";
+import UserDashBoardPage from "./pages/UserDashboardPage";
+import { useState,createContext} from 'react';
+
+export const UserContext = createContext(null);
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: (<WelcomePage></WelcomePage>),
+  },
+  {
+    path: '/dashboard',
+    element: (<UserDashBoardPage></UserDashBoardPage>),
+  },
+  {
+    path: '/about',
+    element: (<AboutUsPage></AboutUsPage>),
+  },
+])
 
 function App() {
+  const [user,setUser] = useState();
   return (
-    <div className="container m-auto">
-      <AdminDashboard />
-    </div>
+      <UserContext.Provider value={{user,setUser}}>
+        <RouterProvider router={router}>
+            <div >
+              <WelcomePage></WelcomePage>
+            </div>
+        </RouterProvider>
+      </UserContext.Provider>
+
   );
 }
 
