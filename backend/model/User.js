@@ -7,7 +7,7 @@ const userSchema = new Schema({
   password: { type: String },
   role: { type: String,  default:'user' },
   state: {type: String},
-  district: {type: String},
+  dist: {type: String},
 },{timestamps: true});
 
 exports.User = mongoose.model('User', userSchema);

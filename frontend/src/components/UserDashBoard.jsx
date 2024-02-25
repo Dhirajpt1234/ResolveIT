@@ -10,6 +10,7 @@ import {
   PencilIcon,
 } from '@heroicons/react/20/solid'
 import { Menu, Transition } from '@headlessui/react'
+import Navbar from './navbar'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -70,8 +71,10 @@ const people = [
     },
   ]
 
-export default function Example() {
+export default function UserDashBoard() {
   return (
+    <>
+    <Navbar></Navbar>
     <div className="max-w-7xl min-w-7xl m-auto p-2">
       <div className='flex flex-row'>
         <div className="min-w-0 flex-1">
@@ -118,5 +121,6 @@ export default function Example() {
         </ul>
       </div>
     </div>
+    </>
   )
 }

@@ -13,7 +13,6 @@ const ProjectGenerationPage = () => {
                     Project Generation Form
                 </h1>
                 <div className='cmpform'>
-
                     <ProjectGenForm />
                 </div>
             </div>
