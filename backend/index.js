@@ -4,6 +4,7 @@ const express = require('express');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
 
+const cors = require('cors');
 const path = require('path');
 const authRouter = require('./routes/Auth');
 const projectRouter = require('./routes/Project');
@@ -20,6 +21,8 @@ const {uploadPdf} = require('./controller/uploadPdf');
 const {User} = require('./model/User')
 
 const server = express();
+
+server.use(cors());
 
 server.use(cookieParser());
 
@@ -39,6 +42,7 @@ server.use(cors());
 server.post('/uploadImg',uploadImg.array('photos'),(req,res,)=>{res.send("File Uploaded")});
 server.post('/uploadPdf',uploadPdf.array('pdfs'),(req,res,)=>{res.send("File Uploaded")});
 server.use(express.json());
+
 server.use('/auth',authRouter.router);
 server.use('/project',projectRouter.router);
 server.use('/complaint',complaintRouter.router);
