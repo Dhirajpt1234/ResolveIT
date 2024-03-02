@@ -5,11 +5,13 @@ import ComplaintForm from "./components/complaintForm";
 import Navbar from "./components/navbar";
 import ProjectGenerationPage from "./pages/projectGeneration/projectGenerationPage";
 import AdminDashboard from "./pages/adminDashboard/adminDashboard";
+import UserDashBoard from "./pages/UserDashBoard";
 
 function App() {
   return (
     <div className="container m-auto">
       <AdminDashboard />
+      {/* <UserDashBoard /> */}
     </div>
   );
 }

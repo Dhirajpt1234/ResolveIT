@@ -70,7 +70,7 @@ const people = [
     },
   ]
 
-export default function Example() {
+export default function UserDashBoard() {
   return (
     <div className="max-w-7xl min-w-7xl m-auto p-2">
       <div className='flex flex-row'>

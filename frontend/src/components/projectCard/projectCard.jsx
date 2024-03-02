@@ -2,18 +2,25 @@ import React from 'react'
 import "./ProjectCard.css"
 import LocationImage from "../../assets/location.png"
 
-const ProjectCard = () => {
+// title: { type: String, },
+//   desc: { type: String},
+//   state: {type: String},
+//   district: {type: String},
+//   status:{ type:String, default:"Pending"},
+//   images : {type:[String]}
+
+const ProjectCard = ({ complaint }) => {
     return (
         <div className='card'>
             <div className='headingCard'>
-                <h1> Project Heading</h1>
+                <h1>{complaint.title} </h1>
             </div>
 
             <div className='locWrapper'>
                 <img className='locImage' src={LocationImage} alt="#" />
 
                 <div className="location">
-                    location
+                    {complaint.district}{", "} {complaint.state}
                 </div>
             </div>
 
