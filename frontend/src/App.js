@@ -6,6 +6,8 @@ import WelcomePage from "./pages/WelcomePage";
 import AboutUsPage from "./pages/AboutPage";
 import UserDashBoardPage from "./pages/UserDashboardPage";
 import { useState,createContext} from 'react';
+import ContactUsPage from "./pages/ContactUsPage";
+import RaiseComplaintPage from "./pages/RaiseComplaintPage"
 
 export const UserContext = createContext(null);
 const router = createBrowserRouter([
@@ -18,8 +20,16 @@ const router = createBrowserRouter([
     element: (<UserDashBoardPage></UserDashBoardPage>),
   },
   {
+    path: '/dashboard/raise-complaint',
+    element: (<RaiseComplaintPage></RaiseComplaintPage>),
+  },
+  {
     path: '/about',
     element: (<AboutUsPage></AboutUsPage>),
+  },
+  {
+    path: '/contact',
+    element: (<ContactUsPage></ContactUsPage>),
   },
 ])
 =======
@@ -38,7 +48,7 @@ function App() {
 <<<<<<< HEAD
       <UserContext.Provider value={{user,setUser}}>
         <RouterProvider router={router}>
-            <div >
+            <div className="w-7xl m-auto">
               <WelcomePage></WelcomePage>
             </div>
         </RouterProvider>

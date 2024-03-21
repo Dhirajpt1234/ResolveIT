@@ -4,14 +4,17 @@ import { PhotoIcon } from '@heroicons/react/24/solid'
 
 const ComplaintForm = () => {
     return (
-
-        <form>
-            <div className="space-y-12">
+        <form
+            onSubmit={(e)=>{
+                e.preventDefault();
+                console.log("Form Submitted");
+            }}
+        >
+            <div className="space-y-12 p-4">
                 <div className="border-b border-gray-900/10 pb-12">
-                    <p className="mt-1 text-sm leading-6 text-gray-600">
+                    <p className="mt-1 text-md font-bold leading-6 text-gray-600 text-center">
                         This information will be displayed publicly.
                     </p>
-
                     <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                         <div className="sm:col-span-4">
                             <label htmlFor="username" className="block text-sm font-medium leading-6 text-gray-900">
@@ -21,8 +24,8 @@ const ComplaintForm = () => {
                                 <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                                     <input
                                         type="text"
-                                        name="username"
-                                        id="username"
+                                        name="complaint_title"
+                                        id="complaint_title"
                                         autoComplete="username"
                                         className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                                         placeholder="complaint title...."
@@ -37,8 +40,8 @@ const ComplaintForm = () => {
                             </label>
                             <div className="mt-2">
                                 <textarea
-                                    id="about"
-                                    name="about"
+                                    id="complaint_desc"
+                                    name="complaint_desc"
                                     rows={3}
                                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                     defaultValue={''}
@@ -61,7 +64,7 @@ const ComplaintForm = () => {
                                             className="relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500"
                                         >
                                             <span>Upload a file</span>
-                                            <input id="file-upload" name="file-upload" type="file" className="sr-only" />
+                                            <input id="file-upload" name="file-upload" type="file" className="multiple sr-only" multiple/>
                                         </label>
                                         <p className="pl-1">or drag and drop</p>
                                     </div>
@@ -73,55 +76,7 @@ const ComplaintForm = () => {
                 </div>
 
                 <div className="border-b border-gray-900/10 pb-12">
-
                     <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-                        <div className="sm:col-span-3">
-                            <label htmlFor="first-name" className="block text-sm font-medium leading-6 text-gray-900">
-                                First name
-                            </label>
-                            <div className="mt-2">
-                                <input
-                                    type="text"
-                                    name="first-name"
-                                    id="first-name"
-                                    autoComplete="given-name"
-                                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                                />
-                            </div>
-                        </div>
-
-                        <div className="sm:col-span-3">
-                            <label htmlFor="last-name" className="block text-sm font-medium leading-6 text-gray-900">
-                                Last name
-                            </label>
-                            <div className="mt-2">
-                                <input
-                                    type="text"
-                                    name="last-name"
-                                    id="last-name"
-                                    autoComplete="family-name"
-                                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                                />
-                            </div>
-                        </div>
-
-                        <div className="sm:col-span-4">
-                            <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
-                                Email address
-                            </label>
-                            <div className="mt-2">
-                                <input
-                                    id="email"
-                                    name="email"
-                                    type="email"
-                                    autoComplete="email"
-                                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                                />
-                            </div>
-                        </div>
-
-
-
                         <div className="col-span-full">
                             <label htmlFor="street-address" className="block text-sm font-medium leading-6 text-gray-900">
                                 Street address
@@ -192,14 +147,15 @@ const ComplaintForm = () => {
 
                 </div>
             </div>
-
-            <div className="mt-6 flex items-center justify-end gap-x-6">
-                <button type="button" className="text-sm font-semibold leading-6 text-gray-900">
+            <div className="mt-6 flex items-center justify-center gap-x-6 my-4">
+                <button
+                    type="button"
+                    className="rounded-md px-4 bg-red-600 py-2 text-md font-semibold text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600">
                     Cancel
                 </button>
                 <button
                     type="submit"
-                    className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                    className="rounded-md px-6 bg-green-700 px-3 py-2 text-md font-semibold text-white shadow-sm hover:bg-greem-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600"
                 >
                     Save
                 </button>

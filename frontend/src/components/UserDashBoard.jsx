@@ -11,6 +11,7 @@ import {
 } from '@heroicons/react/20/solid'
 import { Menu, Transition } from '@headlessui/react'
 import Navbar from './navbar'
+import { useNavigate } from 'react-router-dom'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -72,6 +73,7 @@ const people = [
   ]
 
 export default function UserDashBoard() {
+  const navigate = useNavigate();
   return (
     <>
     <Navbar></Navbar>
@@ -87,6 +89,9 @@ export default function UserDashBoard() {
             <button
                 type="button"
                 className="inline-flex items-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+                onClick={()=>{
+                  navigate('/dashboard/raise-complaint',{ replace: true });
+                }}
             >
                 Raise Issue
             </button>
