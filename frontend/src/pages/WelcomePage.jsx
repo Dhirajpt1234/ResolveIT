@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 import {useForm} from "react-hook-form";
 import Navbar from "../components/navbar";
 import axios from 'axios';
@@ -13,7 +14,10 @@ function LoginForm()
     handleSubmit,
     reset
   } = useForm();
+  const navigate = useNavigate();
   const {setUser} = useContext(UserContext)
+
+
   return (
     <div className="flex m-auto bg-white w-[400px] min-h-full flex-1 flex-col justify-center">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
@@ -31,13 +35,14 @@ function LoginForm()
                 headers: {
                   'Content-Type': 'application/json'
                 }
-                }).then(response => {
+                })
+                .then(response => {
                   setUser({...response});
-                  reset();
-                }).catch(error => {
+                  navigate('/dashboard', { replace: true });
+                })
+                .catch(error => {
                    alert(error)
                 });
-
             })}
             className="space-y-4"
           >

@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
 import Navbar from '../../components/navbar'
-import ComplaintForm from '../../components/complaintForm'
 import ProjectGenForm from '../../components/projectGenForm'
+import { UserContext } from '../../App'
 
 const ProjectGenerationPage = () => {
+    const {user} = useContext(UserContext)
     return (
+        (user) ?
         <div className='container m-auto'>
             <Navbar />
             <div className='info-form' >
@@ -17,6 +19,7 @@ const ProjectGenerationPage = () => {
                 </div>
             </div>
         </div>
+        : <Navigate to='/' replace={true}></Navigate>
     )
 }
 

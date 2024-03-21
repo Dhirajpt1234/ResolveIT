@@ -6,15 +6,15 @@ import { Link } from "react-router-dom";
 const navigation = [
   { name: "Home", link: "/", default:true},
   { name: "Dashboard", link: "/dashboard", default:false,user:true},
-  { name: "Projects", link: "#", default:false,user:true},
+  { name: "Projects", link: "/projects", default:false,user:true},
   { name: "About", link: "/about", default:true},
-  { name: "Contact", link: "#", default:true},
+  { name: "Contact", link: "/contact", default:true},
 ];
 
 
 export default function Navbar()
 {
-  const {user} = useContext(UserContext);
+  const {user,setUser} = useContext(UserContext);
   return (
           <div className='mx-auto max-w-7xl bg-gray-100 rounded-md mt-1 px-2 sm:px-6 lg:px-8'>
             <div className='relative flex h-16 items-center'>
@@ -42,7 +42,7 @@ export default function Navbar()
                 </div>
                 <div>
                   {
-                    (user) ? <button className="px-4 py-1 text-white bg-[#08a3f2] rounded-md">Logout</button> : null
+                    (user) ? <button className="px-4 py-1 text-white bg-[#08a3f2] rounded-md" onClick={()=>{setUser(null)}}>Logout</button> : null
                   }
                 </div>
               </div>

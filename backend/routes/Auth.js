@@ -3,7 +3,7 @@ const passport = require('passport');
 const { createUser,loginUser,logout } = require("../Controller/Auth");
 
 const router = express.Router();
-router.post('/register', createUser)
+router.post('/register', createUser,passport.authenticate('local'),loginUser)
       .post('/login', passport.authenticate('local'), loginUser)
       .get('/logout', logout)
 
