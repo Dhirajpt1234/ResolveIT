@@ -41,7 +41,7 @@ export default function ProjectDetails() {
                 <div className="bg-gray-50 px-4 py-3 flex gap-2 justify-center">
                   <button
                     type="button"
-                    className="inline-flex w-full w-[30px] justify-center rounded-md bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto"
+                    className="inline-flex w-full  justify-center rounded-md bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto"
                     onClick={() => setOpen(false)}
                   >
                     Close

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
-import Navbar from '../components/navbar'
-import ComplaintForm from '../components/complaintForm'
-import { UserContext } from '../App'
+import Navbar from '../../components/navbar/navbar'
+import ComplaintForm from '../../components/complaintForm/complaintForm'
+import { UserContext } from '../../App'
 import { Navigate } from 'react-router-dom'
 
 export default function RaiseComplaintPage()

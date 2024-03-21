@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import "./adminDashboard.css"
 import Navbar from '../../components/navbar'
-import ProjectCard from '../../components/projectCard/projectCard'
+import ProjectCard from '../../projectCard/projectCard'
 
 const AdminDashboard = () => {
 

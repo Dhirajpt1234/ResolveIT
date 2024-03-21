@@ -10,7 +10,7 @@ import {
   PencilIcon,
 } from '@heroicons/react/20/solid'
 import { Menu, Transition } from '@headlessui/react'
-import Navbar from './navbar'
+import Navbar from '../../navbar/navbar'
 import { useNavigate } from 'react-router-dom'
 
 function classNames(...classes) {

@@ -155,7 +155,7 @@ const ComplaintForm = () => {
                 </button>
                 <button
                     type="submit"
-                    className="rounded-md px-6 bg-green-700 px-3 py-2 text-md font-semibold text-white shadow-sm hover:bg-greem-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600"
+                    className="rounded-md bg-green-700 px-3 py-2 text-md font-semibold text-white shadow-sm hover:bg-greem-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600"
                 >
                     Save
                 </button>
