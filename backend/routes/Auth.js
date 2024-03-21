@@ -1,10 +1,13 @@
-const express = require('express');
-const passport = require('passport');
-const { createUser,loginUser,logout } = require("../Controller/Auth");
+const express = require("express");
+const passport = require("passport");
+const { createUser, loginUser, logout } = require("../controller/Auth");
 
 const router = express.Router();
-router.post('/register', createUser,passport.authenticate('local'),loginUser)
-      .post('/login', passport.authenticate('local'), loginUser)
-      .get('/logout', logout)
+
+router
+  .post("/register", createUser)
+  .post("/login", passport.authenticate("local"), loginUser)
+  .get("/logout", logout);
+
 
 exports.router = router;
