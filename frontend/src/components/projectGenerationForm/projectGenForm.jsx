@@ -2,7 +2,8 @@ import React from 'react'
 
 
 import { PhotoIcon } from '@heroicons/react/24/solid'
-import DropDown from './dropDown'
+import DropDown from '../dropDownCustom/dropDown'
+
 const ProjectGenForm = () => {
     return (
         <form>

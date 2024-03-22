@@ -7,6 +7,7 @@ import UserDashBoardPage from "./pages/UserDashboard/UserDashboardPage";
 import { useState, createContext } from "react";
 import ContactUsPage from "./pages/contactUs/contactUs";
 import RaiseComplaintPage from "./pages/raiseComplaint/raiseComplaint";
+import ProjectGenForm from "./components/projectGenerationForm/projectGenForm";
 
 export const UserContext = createContext(null);
 const router = createBrowserRouter([
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
   {
     path: "/contact",
     element: <ContactUsPage></ContactUsPage>,
+  },
+  {
+    path: "/projects",
+    element: <ProjectGenForm></ProjectGenForm>,
   },
 ]);
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import Navbar from "../../components/navbar/navbar";
@@ -6,6 +6,8 @@ import axios from 'axios';
 import { useContext } from "react";
 import { UserContext } from "../../App"
 import LoginForm from "../../components/loginForm/loginForm";
+import { signUp } from "../../api/Api";
+import { checkAuth } from "../../api/Api";
 
 
 
@@ -29,15 +31,9 @@ function RegisterForm() {
         <form
           noValidate
           onSubmit={handleSubmit((data) => {
-            axios.post('http://localhost:8080/auth/register', data, {
-              headers: {
-                'Content-Type': 'application/json'
-              }
-            }).then(response => {
-              reset();
-            }).catch(error => {
-              alert(error)
-            });
+            signUp(data)
+            .then(response => {reset();})
+            .catch(error => {alert(error)});
           }
           )}
           className="space-y-4"
@@ -159,7 +155,25 @@ function RegisterForm() {
 }
 
 function WelcomePage() {
-  const [login, setLogin] = useState();
+  const [login, setLogin] = useState(1);
+  const { user, setUser } = useContext(UserContext);
+  const navigate = useNavigate();
+
+
+  useEffect(()=>{
+    console.log("in useEffect");
+    checkAuth()
+    .then((data)=>{
+      // if(data.data){
+        setUser({...data});
+        navigate('/dashboard', { replace: true });
+      // }
+    })
+    .catch(()=>{
+      setUser(null);
+    })
+  },[user])
+
   return (
     <div className="max-w-7xl m-auto">
       <Navbar></Navbar>
