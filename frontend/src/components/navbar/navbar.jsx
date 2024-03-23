@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import {UserContext} from "../../App"
 import { Link } from "react-router-dom";
+import { logout } from "../../api/Api";
 
 
 const navigation = [
@@ -42,7 +43,13 @@ export default function Navbar()
                 </div>
                 <div>
                   {
-                    (user) ? <button className="px-4 py-1 text-white bg-[#08a3f2] rounded-md" onClick={()=>{setUser(null)}}>Logout</button> : null
+                    (user) ? <button className="px-4 py-1 text-white bg-[#08a3f2] rounded-md"
+                     onClick={()=>{
+                      logout().then(()=>{
+                          setUser(null)
+                        })
+                      }
+                    }>Logout</button> : null
                   }
                 </div>
               </div>

@@ -5,12 +5,12 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { useContext } from "react";
 import { UserContext } from "../../App"
+import { signIn } from "../../api/Api";
 
 function LoginForm() {
     const {
         register,
         handleSubmit,
-        reset
     } = useForm();
     const navigate = useNavigate();
     const { setUser } = useContext(UserContext)
@@ -28,11 +28,7 @@ function LoginForm() {
                 <form
                     noValidate
                     onSubmit={handleSubmit((data) => {
-                        axios.post('http://localhost:8080/auth/login', data, {
-                            headers: {
-                                'Content-Type': 'application/json'
-                            }
-                        })
+                            signIn(data)
                             .then(response => {
                                 setUser({ ...response });
                                 navigate('/dashboard', { replace: true });
